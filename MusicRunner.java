@@ -2,6 +2,12 @@ import java.util.Arrays;
 
 public class MusicRunner
 {
+  // Remove double quotes from beginning and end, trim off any whitespace
+  public static String clean(String input)
+  {
+    return input;
+  }
+  
   public static void main (String[] args)
   {
     int count = 0;
@@ -26,7 +32,9 @@ public class MusicRunner
       System.out.println(Arrays.toString(data));
       
       // Let's try to create a Song object
-      Song song = new Song(data[0], data[1]);  // data[0] is the artist and data[1] is the name
+      Song song = new Song(clean(data[0]), data[1], 2008, 4.5, "these are not the real notes");  // data[0] is the artist and data[1] is the name
+      
+      System.out.println(song.artist);
       
       count++;
       
